@@ -10,4 +10,5 @@ Program Listing for File doc.hpp
 
 .. code-block:: cpp
 
+   #pragma once
    
