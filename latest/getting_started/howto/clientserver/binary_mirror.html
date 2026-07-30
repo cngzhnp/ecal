@@ -16,44 +16,48 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/bignums.css?v=9f114507" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/sphinx-book-theme-1.1.2-ecaladdon.css?v=cdea9536" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/tabs-3.4.5-ecaladdon.css?v=558f29d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/sphinx-book-theme-1.2.0-ecaladdon.css?v=cdea9536" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tabs-3.5.0-ecaladdon.css?v=b38c4a5c" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=a401138a"></script>
-    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
     <script src="../../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
     <script src="../../../_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/howto/clientserver/binary_mirror';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://eclipse-ecal.github.io/ecal/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v999.0';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
         </script>
     <link rel="icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -62,6 +66,7 @@
     <link rel="prev" title="7.3. Service: Client &amp; Server" href="../clientserver.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,19 +82,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -97,7 +91,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -105,8 +98,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -122,7 +115,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -152,33 +146,29 @@
     
     
     <img src="../../../_static/ecal-logo.svg" class="logo__image only-light" alt="Eclipse eCAL™ - Home"/>
-    <script>document.write(`<img src="../../../_static/ecal-logo.svg" class="logo__image only-dark" alt="Eclipse eCAL™ - Home"/>`);</script>
+    <img src="../../../_static/ecal-logo.svg" class="logo__image only-dark pst-js-only" alt="Eclipse eCAL™ - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
   </div>
-`);
-</script></div>
+</div></div>
         <div class="sidebar-primary-item">
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
@@ -187,7 +177,6 @@ document.write(`
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -275,6 +264,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1ab602f6c8307b53fe6826d7618ac9f465.html">Function eCAL::Config::GetDropOutOfOrderMessages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1a00f593fbed5a932d13d95e5d670fa27d.html">Function eCAL::Config::GetEcalSysFilterExcludeList</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1af5b58da0cab93d96828ae51f56da08c2.html">Function eCAL::Config::GetLoadedEcalIniPath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1a7fc370f43ff50281aab1200600bdba9b.html">Function eCAL::Config::GetMaxUdpDatagramSizeBytes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1ae2fa1793150cbce526ab0b81e1773f7b.html">Function eCAL::Config::GetRegistrationRefreshMs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1a313807e5364233c84ae52d3a2ab10211.html">Function eCAL::Config::GetRegistrationTimeoutMs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_api/function_config_8h_1a3253931786d5bbb82c458c56d9b2a767.html">Function eCAL::Config::GetShmMonitoringDomain</a></li>
@@ -524,9 +514,14 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -673,7 +668,7 @@ document.write(`
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -687,25 +682,17 @@ document.write(`
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -1374,32 +1361,31 @@ You can also call it directly on the service client, but if you iterate through 
 <span class="linenos">132</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Method callback call failed.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="linenos">133</span><span class="w">        </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="linenos">134</span><span class="w">      </span><span class="p">}</span>
-<span class="linenos">135</span><span class="w">      </span><span class="k">break</span><span class="p">;</span>
-<span class="linenos">136</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">137</span>
-<span class="linenos">138</span><span class="w">    </span><span class="cm">/*</span>
-<span class="linenos">139</span><span class="cm">      Now we set the process state according to the result of the service calls.</span>
-<span class="linenos">140</span><span class="cm">      You will see the state in the eCAL Monitor or the eCAL Sys application.</span>
-<span class="linenos">141</span><span class="cm">    */</span>
-<span class="linenos">142</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">calls_ok</span><span class="p">)</span>
-<span class="linenos">143</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">144</span><span class="w">      </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">SetState</span><span class="p">(</span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverity</span><span class="o">::</span><span class="n">healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverityLevel</span><span class="o">::</span><span class="n">level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
-<span class="linenos">145</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">146</span><span class="w">    </span><span class="k">else</span>
-<span class="linenos">147</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">148</span><span class="w">      </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">SetState</span><span class="p">(</span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverity</span><span class="o">::</span><span class="n">critical</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverityLevel</span><span class="o">::</span><span class="n">level3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Calls failed!&quot;</span><span class="p">);</span>
-<span class="linenos">149</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">150</span>
-<span class="linenos">151</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
-<span class="linenos">152</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">153</span>
-<span class="linenos">154</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos">155</span><span class="cm">    After we are done, as always, finalize the eCAL API.</span>
-<span class="linenos">156</span><span class="cm">  */</span>
-<span class="linenos">157</span><span class="w">  </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
-<span class="linenos">158</span>
-<span class="linenos">159</span><span class="w">  </span><span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="linenos">160</span><span class="p">}</span>
+<span class="linenos">135</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span><span class="w">    </span><span class="cm">/*</span>
+<span class="linenos">138</span><span class="cm">      Now we set the process state according to the result of the service calls.</span>
+<span class="linenos">139</span><span class="cm">      You will see the state in the eCAL Monitor or the eCAL Sys application.</span>
+<span class="linenos">140</span><span class="cm">    */</span>
+<span class="linenos">141</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">calls_ok</span><span class="p">)</span>
+<span class="linenos">142</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">143</span><span class="w">      </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">SetState</span><span class="p">(</span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverity</span><span class="o">::</span><span class="n">healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverityLevel</span><span class="o">::</span><span class="n">level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
+<span class="linenos">144</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">145</span><span class="w">    </span><span class="k">else</span>
+<span class="linenos">146</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">147</span><span class="w">      </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">SetState</span><span class="p">(</span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverity</span><span class="o">::</span><span class="n">critical</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Process</span><span class="o">::</span><span class="n">eSeverityLevel</span><span class="o">::</span><span class="n">level3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Calls failed!&quot;</span><span class="p">);</span>
+<span class="linenos">148</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">149</span>
+<span class="linenos">150</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
+<span class="linenos">151</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">152</span>
+<span class="linenos">153</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos">154</span><span class="cm">    After we are done, as always, finalize the eCAL API.</span>
+<span class="linenos">155</span><span class="cm">  */</span>
+<span class="linenos">156</span><span class="w">  </span><span class="n">eCAL</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
+<span class="linenos">157</span>
+<span class="linenos">158</span><span class="w">  </span><span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">159</span><span class="p">}</span>
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-1-Qw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-Qw==" name="Qw==" role="tabpanel" tabindex="0"><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ecal_c/ecal.h&gt;</span>
@@ -1408,197 +1394,198 @@ You can also call it directly on the service client, but if you iterate through 
 <span class="linenos">  4</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">  // printf()</span>
 <span class="linenos">  5</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1"> // strlen</span>
 <span class="linenos">  6</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1"> // free</span>
-<span class="linenos">  7</span>
-<span class="linenos">  8</span><span class="cm">/*</span>
-<span class="linenos">  9</span><span class="cm">  Helper function to print the service response.</span>
-<span class="linenos"> 10</span><span class="cm">*/</span>
-<span class="linenos"> 11</span><span class="kt">void</span><span class="w"> </span><span class="nf">printServiceResponse</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceResponse</span><span class="o">*</span><span class="w"> </span><span class="n">service_response</span><span class="p">)</span>
-<span class="linenos"> 12</span><span class="p">{</span>
-<span class="linenos"> 13</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-<span class="linenos"> 14</span><span class="w">  </span>
-<span class="linenos"> 15</span><span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">call_state</span><span class="p">)</span>
-<span class="linenos"> 16</span><span class="w">  </span><span class="p">{</span>
-<span class="linenos"> 17</span><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">eCAL_eCallState_executed</span><span class="p">:</span>
-<span class="linenos"> 18</span><span class="w">    </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;EXECUTED&quot;</span><span class="p">;</span>
-<span class="linenos"> 19</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
-<span class="linenos"> 20</span><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">eCAL_eCallState_failed</span><span class="p">:</span>
-<span class="linenos"> 21</span><span class="w">    </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">;</span>
-<span class="linenos"> 22</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
-<span class="linenos"> 23</span><span class="w">  </span><span class="k">default</span><span class="o">:</span>
-<span class="linenos"> 24</span><span class="w">    </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UNKNOWN&quot;</span><span class="p">;</span>
-<span class="linenos"> 25</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
-<span class="linenos"> 26</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 27</span>
-<span class="linenos"> 28</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Received service response in C: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">call_state</span><span class="p">);</span>
-<span class="linenos"> 29</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Method    : %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">service_method_information</span><span class="p">.</span><span class="n">method_name</span><span class="p">);</span>
-<span class="linenos"> 30</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Response  : %.*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">response_length</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">response</span><span class="p">);</span>
-<span class="linenos"> 31</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Server ID : %llu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">server_id</span><span class="p">.</span><span class="n">service_id</span><span class="p">.</span><span class="n">entity_id</span><span class="p">);</span>
-<span class="linenos"> 32</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Host      : %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">server_id</span><span class="p">.</span><span class="n">service_id</span><span class="p">.</span><span class="n">host_name</span><span class="p">);</span>
-<span class="linenos"> 33</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos"> 34</span><span class="p">}</span>
-<span class="linenos"> 35</span>
-<span class="linenos"> 36</span><span class="cm">/*</span>
-<span class="linenos"> 37</span><span class="cm">  Callback function that will be executed when we receive a response from a server.</span>
-<span class="linenos"> 38</span><span class="cm">*/</span>
-<span class="linenos"> 39</span><span class="kt">void</span><span class="w"> </span><span class="nf">serviceResponseCallback</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceResponse</span><span class="o">*</span><span class="w"> </span><span class="n">service_response</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">user_data</span><span class="p">)</span>
-<span class="linenos"> 40</span><span class="p">{</span>
-<span class="linenos"> 41</span><span class="w">  </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">user_data</span><span class="p">;</span>
-<span class="linenos"> 42</span>
-<span class="linenos"> 43</span><span class="w">  </span><span class="n">printServiceResponse</span><span class="p">(</span><span class="n">service_response</span><span class="p">);</span><span class="w"> </span>
-<span class="linenos"> 44</span><span class="p">}</span>
-<span class="linenos"> 45</span>
+<span class="linenos">  7</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;inttypes.h&gt;</span><span class="c1"> //uint64_t</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span><span class="cm">/*</span>
+<span class="linenos"> 10</span><span class="cm">  Helper function to print the service response.</span>
+<span class="linenos"> 11</span><span class="cm">*/</span>
+<span class="linenos"> 12</span><span class="kt">void</span><span class="w"> </span><span class="nf">printServiceResponse</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceResponse</span><span class="o">*</span><span class="w"> </span><span class="n">service_response</span><span class="p">)</span>
+<span class="linenos"> 13</span><span class="p">{</span>
+<span class="linenos"> 14</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="linenos"> 15</span><span class="w">  </span>
+<span class="linenos"> 16</span><span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">call_state</span><span class="p">)</span>
+<span class="linenos"> 17</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 18</span><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">eCAL_eCallState_executed</span><span class="p">:</span>
+<span class="linenos"> 19</span><span class="w">    </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;EXECUTED&quot;</span><span class="p">;</span>
+<span class="linenos"> 20</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos"> 21</span><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">eCAL_eCallState_failed</span><span class="p">:</span>
+<span class="linenos"> 22</span><span class="w">    </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">;</span>
+<span class="linenos"> 23</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos"> 24</span><span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="linenos"> 25</span><span class="w">    </span><span class="n">call_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UNKNOWN&quot;</span><span class="p">;</span>
+<span class="linenos"> 26</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos"> 27</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Received service response in C: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">call_state</span><span class="p">);</span>
+<span class="linenos"> 30</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Method    : %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">service_method_information</span><span class="p">.</span><span class="n">method_name</span><span class="p">);</span>
+<span class="linenos"> 31</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Response  : %.*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">response_length</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">response</span><span class="p">);</span>
+<span class="linenos"> 32</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Server ID : %&quot;</span><span class="w"> </span><span class="n">PRIu64</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">server_id</span><span class="p">.</span><span class="n">service_id</span><span class="p">.</span><span class="n">entity_id</span><span class="p">);</span>
+<span class="linenos"> 33</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Host      : %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service_response</span><span class="o">-&gt;</span><span class="n">server_id</span><span class="p">.</span><span class="n">service_id</span><span class="p">.</span><span class="n">host_name</span><span class="p">);</span>
+<span class="linenos"> 34</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 35</span><span class="p">}</span>
+<span class="linenos"> 36</span>
+<span class="linenos"> 37</span><span class="cm">/*</span>
+<span class="linenos"> 38</span><span class="cm">  Callback function that will be executed when we receive a response from a server.</span>
+<span class="linenos"> 39</span><span class="cm">*/</span>
+<span class="linenos"> 40</span><span class="kt">void</span><span class="w"> </span><span class="nf">serviceResponseCallback</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceResponse</span><span class="o">*</span><span class="w"> </span><span class="n">service_response</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">user_data</span><span class="p">)</span>
+<span class="linenos"> 41</span><span class="p">{</span>
+<span class="linenos"> 42</span><span class="w">  </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">user_data</span><span class="p">;</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span><span class="w">  </span><span class="n">printServiceResponse</span><span class="p">(</span><span class="n">service_response</span><span class="p">);</span><span class="w"> </span>
+<span class="linenos"> 45</span><span class="p">}</span>
 <span class="linenos"> 46</span>
-<span class="linenos"> 47</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="linenos"> 48</span><span class="p">{</span>
-<span class="linenos"> 49</span><span class="w">  </span><span class="n">eCAL_ServiceClient</span><span class="o">*</span><span class="w"> </span><span class="n">mirror_client</span><span class="p">;</span>
-<span class="linenos"> 50</span><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="o">*</span><span class="w"> </span><span class="n">method_information_set</span><span class="p">;</span>
-<span class="linenos"> 51</span>
-<span class="linenos"> 52</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos"> 53</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; C: MIRROR CLIENT</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos"> 54</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos"> 55</span>
-<span class="linenos"> 56</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos"> 57</span><span class="cm">    As always: initialize the eCAL API and give your process a name.</span>
-<span class="linenos"> 58</span><span class="cm">  */</span>
-<span class="linenos"> 59</span><span class="w">  </span><span class="n">eCAL_Initialize</span><span class="p">(</span><span class="s">&quot;mirror client c&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-<span class="linenos"> 60</span>
-<span class="linenos"> 61</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;eCAL %s (%s)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_GetVersionString</span><span class="p">(),</span><span class="w"> </span><span class="n">eCAL_GetVersionDateString</span><span class="p">());</span>
-<span class="linenos"> 62</span><span class="w">  </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Waiting for a service ...&quot;</span><span class="p">);</span>
-<span class="linenos"> 63</span>
-<span class="linenos"> 64</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos"> 65</span><span class="cm">    Create a ServiceMethodInformation struct that contains the information about the service methods we want to call.</span>
-<span class="linenos"> 66</span><span class="cm">    In this case, we want to call the methods &quot;echo&quot; and &quot;reverse&quot;.</span>
-<span class="linenos"> 67</span><span class="cm">  */</span>
-<span class="linenos"> 68</span><span class="w">  </span><span class="n">method_information_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="o">*</span><span class="p">)</span><span class="n">eCAL_Malloc</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="p">));</span>
-<span class="linenos"> 69</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method_information_set</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
-<span class="linenos"> 70</span><span class="w">  </span><span class="p">{</span>
-<span class="linenos"> 71</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Memory allocation failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos"> 72</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
-<span class="linenos"> 73</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 74</span>
-<span class="linenos"> 75</span><span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">method_information_set</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="p">));</span>
-<span class="linenos"> 76</span><span class="w">  </span><span class="n">method_information_set</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">method_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo&quot;</span><span class="p">;</span>
-<span class="linenos"> 77</span><span class="w">  </span><span class="n">method_information_set</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">method_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;reverse&quot;</span><span class="p">;</span>
-<span class="linenos"> 78</span>
-<span class="linenos"> 79</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos"> 80</span><span class="cm">    Create a client that connects to a &quot;mirror&quot; server.</span>
-<span class="linenos"> 81</span><span class="cm">    It may call the methods &quot;echo&quot; and &quot;reverse&quot;.</span>
-<span class="linenos"> 82</span><span class="cm">  */</span>
-<span class="linenos"> 83</span><span class="w">  </span><span class="n">mirror_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eCAL_ServiceClient_New</span><span class="p">(</span><span class="s">&quot;mirror&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">method_information_set</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-<span class="linenos"> 84</span>
-<span class="linenos"> 85</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos"> 86</span><span class="cm">    Wait until the client is connected to a server,</span>
-<span class="linenos"> 87</span><span class="cm">    so we don&#39;t call methods that are not available.</span>
-<span class="linenos"> 88</span><span class="cm">  */</span>
-<span class="linenos"> 89</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">eCAL_ServiceClient_IsConnected</span><span class="p">(</span><span class="n">mirror_client</span><span class="p">))</span>
-<span class="linenos"> 90</span><span class="w">  </span><span class="p">{</span>
-<span class="linenos"> 91</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Waiting for a service ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos"> 92</span><span class="w">    </span><span class="n">eCAL_Process_SleepMS</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-<span class="linenos"> 93</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 94</span>
-<span class="linenos"> 95</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos"> 96</span><span class="cm">    Now that we are connected, we can set the process state to &quot;healthy&quot; and communicate the connection.</span>
-<span class="linenos"> 97</span><span class="cm">  */</span>
-<span class="linenos"> 98</span><span class="w">  </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
-<span class="linenos"> 99</span>
-<span class="linenos">100</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos">101</span><span class="cm">    Allow alternating between the two methods &quot;echo&quot; and &quot;reverse&quot;.</span>
-<span class="linenos">102</span><span class="cm">  */</span>
-<span class="linenos">103</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">methods</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;reverse&quot;</span><span class="w"> </span><span class="p">};</span>
-<span class="linenos">104</span><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">method_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">methods</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">methods</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="linenos">105</span><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">106</span><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">107</span>
-<span class="linenos">108</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">eCAL_Ok</span><span class="p">())</span>
-<span class="linenos">109</span><span class="w">  </span><span class="p">{</span>
-<span class="linenos">110</span><span class="w">    </span><span class="cm">/* </span>
-<span class="linenos">111</span><span class="cm">      Alternate between the two methods &quot;echo&quot; and &quot;reverse&quot;.</span>
-<span class="linenos">112</span><span class="cm">      Create the request payload.</span>
-<span class="linenos">113</span><span class="cm">    */</span>
-<span class="linenos">114</span><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">method_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">methods</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">method_count</span><span class="p">];</span>
-<span class="linenos">115</span><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">request</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;stressed&quot;</span><span class="p">;</span>
-<span class="linenos">116</span><span class="w">    </span>
-<span class="linenos">117</span><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_ClientInstance</span><span class="o">**</span><span class="w"> </span><span class="n">client_instances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eCAL_ServiceClient_GetClientInstances</span><span class="p">(</span><span class="n">mirror_client</span><span class="p">);</span>
-<span class="linenos">118</span><span class="w">    </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client_instances</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">client_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-<span class="linenos">119</span>
-<span class="linenos">120</span><span class="w">    </span><span class="cm">/*</span>
-<span class="linenos">121</span><span class="cm">      We iterate now over all client instances and call the methods by name.</span>
-<span class="linenos">122</span><span class="cm">      With this approach we have the option to filter out client instances that we don&#39;t want to call.</span>
-<span class="linenos">123</span><span class="cm">      If you want to call either way all instances, then you can use</span>
-<span class="linenos">124</span>
-<span class="linenos">125</span><span class="cm">      eCAL_ServiceClient_CallWithResponse(mirror_client, ...)</span>
-<span class="linenos">126</span><span class="cm">      eCAL_ServiceClient_CallWithCallback(mirror_client, ...)</span>
-<span class="linenos">127</span>
-<span class="linenos">128</span><span class="cm">      instead of the loop.</span>
-<span class="linenos">129</span><span class="cm">    */</span>
-<span class="linenos">130</span><span class="w">    </span>
-<span class="linenos">131</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client_instances</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
-<span class="linenos">132</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">133</span><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">client_instances</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
-<span class="linenos">134</span><span class="w">      </span><span class="p">{</span>
-<span class="linenos">135</span><span class="w">        </span><span class="cm">/*</span>
-<span class="linenos">136</span><span class="cm">          Service call: blocking</span>
-<span class="linenos">137</span><span class="cm">          We leave the default timeout value (infinite) for the blocking call.</span>
-<span class="linenos">138</span><span class="cm">          You can change this for a specified timeout in ms.</span>
-<span class="linenos">139</span><span class="cm">        */</span>
-<span class="linenos">140</span><span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceResponse</span><span class="o">*</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eCAL_ClientInstance_CallWithResponse</span><span class="p">(</span><span class="n">client_instances</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">method_name</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">request</span><span class="p">),</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-<span class="linenos">141</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
-<span class="linenos">142</span><span class="w">        </span><span class="p">{</span>
-<span class="linenos">143</span><span class="w">          </span><span class="n">printServiceResponse</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
-<span class="linenos">144</span><span class="w">          </span><span class="n">eCAL_Free</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
-<span class="linenos">145</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos">146</span><span class="w">        </span><span class="k">else</span>
-<span class="linenos">147</span><span class="w">        </span><span class="p">{</span>
-<span class="linenos">148</span><span class="w">          </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Method blocking call failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos">149</span><span class="w">          </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">150</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos">151</span>
-<span class="linenos">152</span><span class="w">        </span><span class="cm">/*</span>
-<span class="linenos">153</span><span class="cm">          Service call: with callback</span>
-<span class="linenos">154</span><span class="cm">          The callback will be executed when the server has processed the request and sent a response.</span>
-<span class="linenos">155</span><span class="cm">          You can again set a timeout value for an internal waiting time. By default, we wait infinitely.</span>
-<span class="linenos">156</span><span class="cm">        */</span>
-<span class="linenos">157</span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">eCAL_ClientInstance_CallWithCallback</span><span class="p">(</span><span class="n">client_instances</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">method_name</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">request</span><span class="p">),</span><span class="w"> </span><span class="n">serviceResponseCallback</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="linenos">158</span><span class="w">        </span><span class="p">{</span>
-<span class="linenos">159</span><span class="w">          </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Method callback call failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="linenos">160</span><span class="w">          </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">161</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos">162</span><span class="w">      </span><span class="p">}</span>
-<span class="linenos">163</span>
-<span class="linenos">164</span><span class="w">      </span><span class="cm">/*</span>
-<span class="linenos">165</span><span class="cm">        After usage, free the memory from the client instances.</span>
-<span class="linenos">166</span><span class="cm">      */</span>
-<span class="linenos">167</span><span class="w">      </span><span class="n">eCAL_ClientInstances_Delete</span><span class="p">(</span><span class="n">client_instances</span><span class="p">);</span>
-<span class="linenos">168</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">169</span>
-<span class="linenos">170</span><span class="w">    </span><span class="cm">/*</span>
-<span class="linenos">171</span><span class="cm">      Now we set the process state according to the result of the service calls.</span>
-<span class="linenos">172</span><span class="cm">      You will see the state in the eCAL Monitor or the eCAL Sys application.</span>
-<span class="linenos">173</span><span class="cm">    */</span>
-<span class="linenos">174</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">calls_ok</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="linenos">175</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">176</span><span class="w">      </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
-<span class="linenos">177</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">178</span><span class="w">    </span><span class="k">else</span>
-<span class="linenos">179</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">180</span><span class="w">      </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_critical</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Calls failed!&quot;</span><span class="p">);</span>
-<span class="linenos">181</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">182</span>
-<span class="linenos">183</span><span class="w">    </span><span class="n">eCAL_Process_SleepMS</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-<span class="linenos">184</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">185</span>
-<span class="linenos">186</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos">187</span><span class="cm">    Don&#39;t forget to delete the client handle.</span>
-<span class="linenos">188</span><span class="cm">  */</span>
-<span class="linenos">189</span><span class="w">  </span><span class="n">eCAL_ServiceClient_Delete</span><span class="p">(</span><span class="n">mirror_client</span><span class="p">);</span>
-<span class="linenos">190</span>
-<span class="linenos">191</span><span class="w">  </span><span class="cm">/*</span>
-<span class="linenos">192</span><span class="cm">    After we are done, as always, finalize the eCAL API.</span>
-<span class="linenos">193</span><span class="cm">  */</span>
-<span class="linenos">194</span><span class="w">  </span><span class="n">eCAL_Finalize</span><span class="p">();</span>
-<span class="linenos">195</span>
-<span class="linenos">196</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">197</span><span class="p">}</span>
+<span class="linenos"> 47</span>
+<span class="linenos"> 48</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="linenos"> 49</span><span class="p">{</span>
+<span class="linenos"> 50</span><span class="w">  </span><span class="n">eCAL_ServiceClient</span><span class="o">*</span><span class="w"> </span><span class="n">mirror_client</span><span class="p">;</span>
+<span class="linenos"> 51</span><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="o">*</span><span class="w"> </span><span class="n">method_information_set</span><span class="p">;</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 54</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; C: MIRROR CLIENT</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 55</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos"> 58</span><span class="cm">    As always: initialize the eCAL API and give your process a name.</span>
+<span class="linenos"> 59</span><span class="cm">  */</span>
+<span class="linenos"> 60</span><span class="w">  </span><span class="n">eCAL_Initialize</span><span class="p">(</span><span class="s">&quot;mirror client c&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;eCAL %s (%s)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_GetVersionString</span><span class="p">(),</span><span class="w"> </span><span class="n">eCAL_GetVersionDateString</span><span class="p">());</span>
+<span class="linenos"> 63</span><span class="w">  </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Waiting for a service ...&quot;</span><span class="p">);</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos"> 66</span><span class="cm">    Create a ServiceMethodInformation struct that contains the information about the service methods we want to call.</span>
+<span class="linenos"> 67</span><span class="cm">    In this case, we want to call the methods &quot;echo&quot; and &quot;reverse&quot;.</span>
+<span class="linenos"> 68</span><span class="cm">  */</span>
+<span class="linenos"> 69</span><span class="w">  </span><span class="n">method_information_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="o">*</span><span class="p">)</span><span class="n">eCAL_Malloc</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="p">));</span>
+<span class="linenos"> 70</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method_information_set</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<span class="linenos"> 71</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Memory allocation failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 73</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="linenos"> 74</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 75</span>
+<span class="linenos"> 76</span><span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">method_information_set</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceMethodInformation</span><span class="p">));</span>
+<span class="linenos"> 77</span><span class="w">  </span><span class="n">method_information_set</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">method_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo&quot;</span><span class="p">;</span>
+<span class="linenos"> 78</span><span class="w">  </span><span class="n">method_information_set</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">method_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;reverse&quot;</span><span class="p">;</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos"> 81</span><span class="cm">    Create a client that connects to a &quot;mirror&quot; server.</span>
+<span class="linenos"> 82</span><span class="cm">    It may call the methods &quot;echo&quot; and &quot;reverse&quot;.</span>
+<span class="linenos"> 83</span><span class="cm">  */</span>
+<span class="linenos"> 84</span><span class="w">  </span><span class="n">mirror_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eCAL_ServiceClient_New</span><span class="p">(</span><span class="s">&quot;mirror&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">method_information_set</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos"> 87</span><span class="cm">    Wait until the client is connected to a server,</span>
+<span class="linenos"> 88</span><span class="cm">    so we don&#39;t call methods that are not available.</span>
+<span class="linenos"> 89</span><span class="cm">  */</span>
+<span class="linenos"> 90</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">eCAL_ServiceClient_IsConnected</span><span class="p">(</span><span class="n">mirror_client</span><span class="p">))</span>
+<span class="linenos"> 91</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Waiting for a service ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 93</span><span class="w">    </span><span class="n">eCAL_Process_SleepMS</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos"> 94</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos"> 97</span><span class="cm">    Now that we are connected, we can set the process state to &quot;healthy&quot; and communicate the connection.</span>
+<span class="linenos"> 98</span><span class="cm">  */</span>
+<span class="linenos"> 99</span><span class="w">  </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos">102</span><span class="cm">    Allow alternating between the two methods &quot;echo&quot; and &quot;reverse&quot;.</span>
+<span class="linenos">103</span><span class="cm">  */</span>
+<span class="linenos">104</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">methods</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;reverse&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">105</span><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">method_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">methods</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">methods</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="linenos">106</span><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">107</span><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">eCAL_Ok</span><span class="p">())</span>
+<span class="linenos">110</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos">111</span><span class="w">    </span><span class="cm">/* </span>
+<span class="linenos">112</span><span class="cm">      Alternate between the two methods &quot;echo&quot; and &quot;reverse&quot;.</span>
+<span class="linenos">113</span><span class="cm">      Create the request payload.</span>
+<span class="linenos">114</span><span class="cm">    */</span>
+<span class="linenos">115</span><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">method_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">methods</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">method_count</span><span class="p">];</span>
+<span class="linenos">116</span><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">request</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;stressed&quot;</span><span class="p">;</span>
+<span class="linenos">117</span><span class="w">    </span>
+<span class="linenos">118</span><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_ClientInstance</span><span class="o">**</span><span class="w"> </span><span class="n">client_instances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eCAL_ServiceClient_GetClientInstances</span><span class="p">(</span><span class="n">mirror_client</span><span class="p">);</span>
+<span class="linenos">119</span><span class="w">    </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client_instances</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">client_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="linenos">120</span>
+<span class="linenos">121</span><span class="w">    </span><span class="cm">/*</span>
+<span class="linenos">122</span><span class="cm">      We iterate now over all client instances and call the methods by name.</span>
+<span class="linenos">123</span><span class="cm">      With this approach we have the option to filter out client instances that we don&#39;t want to call.</span>
+<span class="linenos">124</span><span class="cm">      If you want to call either way all instances, then you can use</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span><span class="cm">      eCAL_ServiceClient_CallWithResponse(mirror_client, ...)</span>
+<span class="linenos">127</span><span class="cm">      eCAL_ServiceClient_CallWithCallback(mirror_client, ...)</span>
+<span class="linenos">128</span>
+<span class="linenos">129</span><span class="cm">      instead of the loop.</span>
+<span class="linenos">130</span><span class="cm">    */</span>
+<span class="linenos">131</span><span class="w">    </span>
+<span class="linenos">132</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client_instances</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<span class="linenos">133</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">134</span><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">client_instances</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="linenos">135</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos">136</span><span class="w">        </span><span class="cm">/*</span>
+<span class="linenos">137</span><span class="cm">          Service call: blocking</span>
+<span class="linenos">138</span><span class="cm">          We leave the default timeout value (infinite) for the blocking call.</span>
+<span class="linenos">139</span><span class="cm">          You can change this for a specified timeout in ms.</span>
+<span class="linenos">140</span><span class="cm">        */</span>
+<span class="linenos">141</span><span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="nc">eCAL_SServiceResponse</span><span class="o">*</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eCAL_ClientInstance_CallWithResponse</span><span class="p">(</span><span class="n">client_instances</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">method_name</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">request</span><span class="p">),</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="linenos">142</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<span class="linenos">143</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">144</span><span class="w">          </span><span class="n">printServiceResponse</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+<span class="linenos">145</span><span class="w">          </span><span class="n">eCAL_Free</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+<span class="linenos">146</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">147</span><span class="w">        </span><span class="k">else</span>
+<span class="linenos">148</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">149</span><span class="w">          </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Method blocking call failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">150</span><span class="w">          </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">151</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">152</span>
+<span class="linenos">153</span><span class="w">        </span><span class="cm">/*</span>
+<span class="linenos">154</span><span class="cm">          Service call: with callback</span>
+<span class="linenos">155</span><span class="cm">          The callback will be executed when the server has processed the request and sent a response.</span>
+<span class="linenos">156</span><span class="cm">          You can again set a timeout value for an internal waiting time. By default, we wait infinitely.</span>
+<span class="linenos">157</span><span class="cm">        */</span>
+<span class="linenos">158</span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">eCAL_ClientInstance_CallWithCallback</span><span class="p">(</span><span class="n">client_instances</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">method_name</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">request</span><span class="p">),</span><span class="w"> </span><span class="n">serviceResponseCallback</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">159</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">160</span><span class="w">          </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Method callback call failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">161</span><span class="w">          </span><span class="n">calls_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">162</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">163</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">164</span>
+<span class="linenos">165</span><span class="w">      </span><span class="cm">/*</span>
+<span class="linenos">166</span><span class="cm">        After usage, free the memory from the client instances.</span>
+<span class="linenos">167</span><span class="cm">      */</span>
+<span class="linenos">168</span><span class="w">      </span><span class="n">eCAL_ClientInstances_Delete</span><span class="p">(</span><span class="n">client_instances</span><span class="p">);</span>
+<span class="linenos">169</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">170</span>
+<span class="linenos">171</span><span class="w">    </span><span class="cm">/*</span>
+<span class="linenos">172</span><span class="cm">      Now we set the process state according to the result of the service calls.</span>
+<span class="linenos">173</span><span class="cm">      You will see the state in the eCAL Monitor or the eCAL Sys application.</span>
+<span class="linenos">174</span><span class="cm">    */</span>
+<span class="linenos">175</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">calls_ok</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">176</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">177</span><span class="w">      </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_healthy</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
+<span class="linenos">178</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">179</span><span class="w">    </span><span class="k">else</span>
+<span class="linenos">180</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">181</span><span class="w">      </span><span class="n">eCAL_Process_SetState</span><span class="p">(</span><span class="n">eCAL_Process_eSeverity_critical</span><span class="p">,</span><span class="w"> </span><span class="n">eCAL_Process_eSeverityLevel_level3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Calls failed!&quot;</span><span class="p">);</span>
+<span class="linenos">182</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">183</span>
+<span class="linenos">184</span><span class="w">    </span><span class="n">eCAL_Process_SleepMS</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos">185</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">186</span>
+<span class="linenos">187</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos">188</span><span class="cm">    Don&#39;t forget to delete the client handle.</span>
+<span class="linenos">189</span><span class="cm">  */</span>
+<span class="linenos">190</span><span class="w">  </span><span class="n">eCAL_ServiceClient_Delete</span><span class="p">(</span><span class="n">mirror_client</span><span class="p">);</span>
+<span class="linenos">191</span>
+<span class="linenos">192</span><span class="w">  </span><span class="cm">/*</span>
+<span class="linenos">193</span><span class="cm">    After we are done, as always, finalize the eCAL API.</span>
+<span class="linenos">194</span><span class="cm">  */</span>
+<span class="linenos">195</span><span class="w">  </span><span class="n">eCAL_Finalize</span><span class="p">();</span>
+<span class="linenos">196</span>
+<span class="linenos">197</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">198</span><span class="p">}</span>
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-1-QyM=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0"><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
@@ -1930,14 +1917,16 @@ You can also call it directly on the service client, but if you iterate through 
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mirror-server">7.3.1.1. Mirror Server</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mirror-client">7.3.1.2. Mirror Client</a></li>
@@ -1989,8 +1978,8 @@ By Author name not set
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
